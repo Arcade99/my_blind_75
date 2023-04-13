@@ -1,16 +1,19 @@
 #pragma once
 #include <string>
-#include <unordered_map>
+#include <vector>
 
 class Solution {
 public:
     bool isAnagram(std::string s, std::string t) {
         if (s.size() != t.size()) return false;
-        std::unordered_map<char, int> sFreq, tFreq;
+        std::vector<int> charFreq(26, 0);
         for (unsigned i = 0; i < s.size(); i++) {
-            sFreq[s[i]]++;
-            tFreq[t[i]]++;
+            charFreq[s[i] - 'a']++;
+            charFreq[t[i] - 'a']--;
         }
-        return sFreq == tFreq;
+        for (int count : charFreq) {
+            if (count != 0) return false;
+        }
+        return true;
     }
 };
