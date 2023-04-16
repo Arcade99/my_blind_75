@@ -10,10 +10,12 @@ public:
         for (int& i : nums) {
             freqMap[i]++;
         }
+        
         std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, myComparator> pq;
         for (auto& p : freqMap) {
             pq.emplace(p);
         }
+
         std::vector<int> results;
         results.reserve(k);
         for (unsigned i = 0; i < k; i++) {
