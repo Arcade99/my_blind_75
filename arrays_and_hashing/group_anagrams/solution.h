@@ -10,10 +10,12 @@ public:
         for (const std::string& s : strs) {
             anagram_groups[myHash(s)].push_back(s);
         }
+
         std::vector<std::vector<std::string>> result;
         for (auto& p : anagram_groups) {
             result.push_back(p.second);
         }
+
         return result;
     }
 
