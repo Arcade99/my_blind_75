@@ -11,15 +11,13 @@ public:
             if (left + right > target) {
                 if (right > left) {
                     j--;
-                }
-                if (left > right) {
+                } else {
                     i++;
                 }
             } else if (left + right < target) {
                 if (right < left) {
                     j--;
-                }
-                if (left < right) {
+                } else {
                     i++;
                 }
             } else {
